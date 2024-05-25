@@ -11,7 +11,7 @@ impl Font {
         let mf = prelude::load_ttf_font(path).await;
 
         if mf.is_err() {
-            panic!("could not load font");
+            panic!("could not load font {path}, error: {:?}", mf.unwrap_err());
         }
 
         let f = mf.unwrap();
