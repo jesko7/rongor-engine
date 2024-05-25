@@ -750,11 +750,11 @@ async fn run(window: Window) {
 
 
     let mut fonts = vec![];
-    let font = Font::load_new_font(r"assets\MADEAwelierPERSONALUSE-Regular.otf").await;
-    let font2 = Font::load_new_font(r"assets\MADEAwelierPERSONALUSE-Bold.otf").await;
-    let font3 = Font::load_new_font(r"assets\coffee_normal\Coffee Normal.otf").await;
+    let font = Font::load_new_font(r"assets\Roboto-Regular.ttf").await;
+    let font2 = Font::load_new_font(r"assets\Roboto-Bold.ttf").await;
+    let font3 = Font::load_new_font(r"assets\coffee_normal\Coffee Normal.ttf").await;
     let font4 = Font::load_new_font(r"assets\creative_vibes\Creative Vibes TTF.ttf").await;
-    let font5 = Font::load_new_font(r"assets\kolak\KOLAK.otf").await;
+    let font5 = Font::load_new_font(r"assets\kolak\KOLAK.ttf").await;
     let font6 = Font::load_new_font(r"assets\super_creamy\Super Creamy Personal Use.ttf").await;
     fonts.push(font);
     fonts.push(font2);
