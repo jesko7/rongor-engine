@@ -1,0 +1,224 @@
+
+
+
+3126 linien
+
+präsentation
+
+elemente:
+    shader:
+        zu kompliziert
+
+    math:
+        gibt es auch
+
+    kamera:
+        2d:
+            zoom
+            rotation
+            position
+            
+        3d:
+            zoom
+            rotation
+            target
+            position
+
+    draw:
+        2d:
+            basic shapes:
+                kreise:
+                    radius
+                    farbe
+                    nur linien
+
+                dreiecke:
+                    drei punkte 
+                    farbe
+                    nur linien
+
+                rechtecke:
+                    farbe
+                    position
+                    breite
+                    höhe
+                    nur linien
+
+                linien:
+                    start punkt
+                    end punkt
+                    dicke
+                    farbe
+
+                text:
+                    font
+                    position
+                    text größe
+                    farbe
+                    rotation
+
+        3d:
+            würfel:
+                position
+                größe
+                texture / farbe
+                nur linien
+
+            kugel:
+                position
+                radius
+                texture / farbe
+                nur linien
+
+            grid:
+                wie viele quadrate
+                platz zwischen den quadraten
+                farbe
+                positon
+                rotation    
+
+    hitbox:
+        2d:
+            rechteck hitbox:
+                position
+                größe
+                collision mit rechteck
+                collision mit punkt
+                
+        3d:
+            würfel hitbox:
+                position
+                größe
+                collision mit würfel
+                collision mit punkt
+
+            Quad hitbox:
+                axis
+                größe
+                position
+                collision mit würfel
+
+    bilder:
+        bilder laden
+        bilder rotieren
+        bilder verkleinern / vergrößern
+
+    tasten:
+        welche tasten gedrückt sind
+        welche tasten vor kurzem gedrückt wurden
+        welche tasten vor kurzem losgelassen wurden  
+
+    mesh:
+        3d modelle laden
+        position
+        rotation
+        größe
+
+    mouse:
+        position
+        welche maus tasten gedrückt sind
+        welche maus tasten vor kurzem gedrückt wurden
+        welche maus tasten vor kurzem losgelassen wurden
+        maus unsichtbar machen
+
+    sound:
+        sounds laden
+        abspielen
+        lautstärke
+
+    ui:
+        QuadraticBeziercurve:
+            start punkt 
+            end punkt
+            controll punkt
+            dicke
+            farbe
+
+        CubicBeziercurve:
+            start punkt 
+            end punkt
+            2 controll punkte
+            dicke
+            farbe
+
+        Button:
+            Text field / rounded field mit image
+            wenn geklickt wird er größer nach ein bestimmten funktion
+
+        RoundedField:
+            große
+            position
+            wie dick die boundary sein solle
+            wie abgerundet die ecken sein sollen
+            farbe innerhalb des feldes
+            farbe der boundary
+
+        Textfield:
+            rounded field mit text
+            font 
+            font size
+            text rotation
+            text farbe
+
+        Bar:
+            abgerundete lineie die zu bestimmten prozent gefüllt werden kann
+            größe
+            position
+            prozent der füllung
+            farbe der boundary 
+            farbe des feldes links
+            farbe des feldes rechts
+
+        Slider:
+            wie eine bar nur noch mit einem kreis den man mit der maus verschieben kann
+            innere farbe des kreises
+            äußere farbe des kreises
+
+        Switch:
+            wie ein slider nur dass mit einem click die bar zu 100% / 0% gefüllt ist
+        
+        TickBox:
+            ein feld das mit einem click angeschaltet wird
+            rounded field mit einem haken in der mitte
+            farbe des hakens
+        
+        EntranceTextfield:
+            wie ein text field, nur dass man in das feld sachen ein geben kann
+            cursor
+            mehreererer linien
+        
+        DottedQuadraticBeziercurve:
+            wie normale QuadraticBeziercurves nur dass die kurve gepunktet ist
+            wie viele punkte
+        
+        DottedCubicBeziercurve:
+            wie normale CubicBeziercurves nur dass die kurve gepunktet ist
+            wie viele punkte
+
+
+
+
+wilkommen page                  | 1 page
+inhaltsverzeichniss             | 1 page
+was ist eine game engine        | 
+generelle infos                 |
+elemente                        |
+spiele                          | 
+ende                            | 1 page
+
+
+
+
+
+
+elements
+
+2d formen                   | ja
+3d formen                   | ja
+text und bilder             | ja
+(mesh                        |)
+hitbox                      | ja
+mouse tastatur (sound)      | ja
+
+(ui sachen                   |)
+
