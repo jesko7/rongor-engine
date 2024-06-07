@@ -47,7 +47,6 @@ impl SquareHitbox {
     pub fn collision_point(&self, other: Vec2) -> bool {
         let (min, max) = self.get_min_max();
 
-        println!("{:?}, {:?},  {:?}, {:?}", min, max, other, self.position);
 
         if min.0 > other.x || max.0 < other.x {
             return false;

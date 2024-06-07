@@ -186,6 +186,8 @@ impl QuadraticBeziercurve {
         draw2d::line::line(end_point, points[points.len() - 1], self.thickness, self.color.clone());
         draw2d::line::line(self.start_point, start_point, self.thickness, self.color.clone());
         draw2d::line::line(self.end_point, end_point, self.thickness, self.color.clone());
+
+        draw2d::circle::circle(self.end_point, self.thickness / 2., self.color.clone());
     }
 }
 
