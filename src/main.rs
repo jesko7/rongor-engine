@@ -1452,8 +1452,8 @@ async fn run(window: Window) {
     //let font = Font::load_new_font(r"assets\Roboto-Regular.ttf").await;
     //let font2 = Font::load_new_font(r"assets\Roboto-Bold.ttf").await;
     
-    let font = Font::load_new_font(r"assets\MADEAwelierPERSONALUSE-Regular.otf").await;
-    let font2 = Font::load_new_font(r"assets\MADEAwelierPERSONALUSE-Bold.otf").await;
+    let font = Font::load_new_font(r"assets\Roboto-Regular.ttf").await;
+    let font2 = Font::load_new_font(r"assets\Roboto-Bold.ttf").await;
 
     let font3 = Font::load_new_font(r"assets\coffee_normal\Coffee Normal.ttf").await;
     let font4 = Font::load_new_font(r"assets\creative_vibes\Creative Vibes TTF.ttf").await;
