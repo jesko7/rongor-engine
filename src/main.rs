@@ -1449,16 +1449,14 @@ async fn run(window: Window) {
 
 
     let mut fonts = vec![];
-    //let font = Font::load_new_font(r"assets\Roboto-Regular.ttf").await;
-    //let font2 = Font::load_new_font(r"assets\Roboto-Bold.ttf").await;
     
-    let font = Font::load_new_font(r"assets\Roboto-Regular.ttf").await;
-    let font2 = Font::load_new_font(r"assets\Roboto-Bold.ttf").await;
+    let font = Font::load_new_font("assets/MADEAwelierPERSONALUSE-Regular.otf").await;
+    let font2 = Font::load_new_font("assets/MADEAwelierPERSONALUSE-Bold.otf").await;
 
-    let font3 = Font::load_new_font(r"assets\coffee_normal\Coffee Normal.ttf").await;
-    let font4 = Font::load_new_font(r"assets\creative_vibes\Creative Vibes TTF.ttf").await;
-    let font5 = Font::load_new_font(r"assets\kolak\KOLAK.ttf").await;
-    let font6 = Font::load_new_font(r"assets\super_creamy\Super Creamy Personal Use.ttf").await;
+    let font3 = Font::load_new_font("assets/coffee_normal/Coffee Normal.ttf").await;
+    let font4 = Font::load_new_font("assets/creative_vibes/Creative Vibes TTF.ttf").await;
+    let font5 = Font::load_new_font("assets/kolak/KOLAK.ttf").await;
+    let font6 = Font::load_new_font("assets/super_creamy/Super Creamy Personal Use.ttf").await;
     fonts.push(font);
     fonts.push(font2);
     fonts.push(font3);
@@ -1468,8 +1466,6 @@ async fn run(window: Window) {
 
 
     let mut objects = vec![];
-    //let penguin = Mesh::load_obj(r"assets\low_poly_tree\Lowpoly_tree_sample.obj", Image::new(r"assets/rust.png", 0., false, false, Vec2::new(1000., 1000.), None).await, Vec3::new(0., 100., 100.), Vec3::new(100., 100., 100.), Vec3::new(0., 0., 0.), None);
-    //objects.push(penguin);
 
 
     let mut textures = vec![];
@@ -1941,7 +1937,7 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>){
                 draw2d::clear(Color::BLACK);
 
 
-                if key::just_pressed("right") {
+                if key::just_pressed("up") {
                     inMinecraft = true;
                     mouse::set_visivle(false);
                     mouse::set_grab(true);
