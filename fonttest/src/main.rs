@@ -6,7 +6,7 @@ use macroquad::prelude::*;
 
 #[macroquad::main("Load Font Example")]
 async fn main() {
-    let font_result = load_ttf_font("assets/Roboto-Regular.ttf").await;
+    let font_result = load_ttf_font(r"assets\MADEAwelierPERSONALUSE-Regular.otf").await;
     let font = match font_result {
         Ok(font) => font,
         Err(e) => {
