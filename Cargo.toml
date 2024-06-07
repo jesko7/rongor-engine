@@ -1,9 +1,11 @@
 [package]
-name = "font_test"
+name = "rongor_engine"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-macroquad = "0.4.8"
+rongor = { path = "./rongor" }
+macroquad = "0.4.5"
+ndarray = "0.15.6"
+tokio = { version = "1", features = ["full"] }
+rand = "0.8.5"
