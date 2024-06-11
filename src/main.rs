@@ -569,7 +569,7 @@ async fn page6(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut
                 textures[3].rotation = T;
             }
         }
-        println!("{}", num_of_presses_on_page);
+
         {
             if num_of_presses_on_page == 7 {
                 if num_of_presses_on_page == 7 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
@@ -580,9 +580,7 @@ async fn page6(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut
                 }
             }
                 // + (T * 10. + 0.9347).sin()  + (T * 10. + 0.9347).cos() Vec2::new(1200. + (T * 10. + 0.9347).cos() * 60., 500. + (T * 10. + 0.9347).sin() * 60.)
-            println!("{}", num_of_presses_on_page);
             if num_of_presses_on_page == 8 {
-                println!("sdfsd");
                 draw2d::text::draw_text_center("Drehtürmodell", Vec2::new(1200. + (T * 10. + 0.9347).cos() * 60., 500. + (T * 10. + 0.9347).sin() * 60.), 70, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             if num_of_presses_on_page == 9 {
@@ -1438,44 +1436,44 @@ async fn page11(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mu
 async fn page13(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut Vec<Image>, cam3d: &mut Camera3d, objects: &mut Vec<Mesh>) {
     unsafe { 
         draw_background(window, rngs).await;
-        draw2d::text::draw_text_center("Elemente der Game Engine", Vec2::new(1920. / 2., 220.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
+        draw2d::text::draw_text_center("Elemente der Game Engine", Vec2::new(1920. / 2., 220. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
         let width = draw2d::text::measure_text("Elemente der Game Engine", 110, Some(fonts[1].clone())).x;
-        draw2d::line::line(Vec2::new(1920. / 2. - width / 2., 285.), Vec2::new(1920. / 2. + width / 2., 285.), 5., Color::BLACK);
+        draw2d::line::line(Vec2::new(1920. / 2. - width / 2., 285. + TRANSITION_TIME * 111.), Vec2::new(1920. / 2. + width / 2., 285. + TRANSITION_TIME * 111.), 5., Color::BLACK);
 
         
         if num_of_presses_on_page >= 1 {
             if num_of_presses_on_page == 1 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("mathe funktionen", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-mathe funktionen", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             else {
-                draw2d::text::draw_text_center("mathe funktionen", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-mathe funktionen", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             } 
         }
 
         if num_of_presses_on_page >= 2 {
             if num_of_presses_on_page == 2 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("shaders", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-shaders", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             else {
-                draw2d::text::draw_text_center("shaders", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-shaders", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             } 
         }
 
         if num_of_presses_on_page >= 3 {
             if num_of_presses_on_page == 3 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("Antialiasing", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.  + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-Antialiasing", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.  + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             else {
-                draw2d::text::draw_text_center("Antialiasing", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-Antialiasing", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             } 
         }
 
         if num_of_presses_on_page >= 4 {
             if num_of_presses_on_page == 4 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("Vektoren", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-Vektoren", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             else {
-                draw2d::text::draw_text_center("Vektoren", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("-Vektoren", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             } 
         }
     };
@@ -1484,14 +1482,14 @@ async fn page13(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mu
 async fn page14(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut Vec<Image>, cam3d: &mut Camera3d, objects: &mut Vec<Mesh>) {
     unsafe { 
         draw_background(window, rngs).await;
-        draw2d::text::draw_text_center("Gibt es noch", Vec2::new(1920. / 2., 350. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
-        draw2d::text::draw_text_center("Fragen?", Vec2::new(1920. / 2., 460. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
+        draw2d::text::draw_text_center("Gibt es noch", Vec2::new(1920. / 2., 1080. /2. - 55. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
+        draw2d::text::draw_text_center("Fragen?", Vec2::new(1920. / 2., 1080. /2. + 55. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
     };
 }
 
 
 async fn run(window: Window) {
-    let mut page = 12;
+    let mut page = 0;
     let mut in_transition = false;
     let mut next_page_transition = false;
     let mut in_transition2 = false;
@@ -1603,7 +1601,7 @@ async fn run(window: Window) {
         }
 
         unsafe {
-            println!("{}", TRANSITION_TIME2);
+            println!("{}", num_of_presses_on_page);
         }
         
 
@@ -1623,7 +1621,7 @@ async fn run(window: Window) {
             12 => minecraft_run(&window, rngs.clone(), fonts.clone()).await,
             13 => page13(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
             14 => page14(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
-            13 => end(&window, rngs.clone(), fonts.clone()).await,
+            15 => end(&window, rngs.clone(), fonts.clone()).await,
             _other => break
         };
         
@@ -1631,10 +1629,12 @@ async fn run(window: Window) {
 
 
         if page == 12 {
-            in_transition = true;
+            //in_transition = true;
             page += 1;
             unsafe {    
-                TRANSITION_TIME = -TRANSITION_MAX_TIME;
+                TRANSITION_TIME = 0.;
+                num_of_presses_on_page = 0;
+                next_page_transition = true;
             }
             
         }
@@ -1865,10 +1865,7 @@ impl Player {
 
                     if wall.collision_cube(self.get_hitbox()) {
                         
-                        //println!("touching wall: {:?}", wall.axis);
-                        //if !top.collision_cube(self.get_hitbox()) {
-                            //println!("{}, {}", top.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) , wall.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))));
-                            
+
                         touching_walls = true;
                         wallytouching.push(wall);
                         dirs.push(x)
@@ -1938,9 +1935,8 @@ impl Player {
                 for wall in walls.iter_mut() {
                     wall.size = wall.size - Vec2::new(0., self.velocity - delta - 0.1);
                     if wall.collision_cube(self.get_hitbox()) {
-                        //println!("touching wall: {:?}", wall.axis);
+                        
                         if top.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) > wall.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) {
-                            //println!("{}, {}", top.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) , wall.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))));
                             touching_walls = true;
                             break;
                         }
@@ -2016,14 +2012,15 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
     ) = init().await;
     
     mouse::set_visivle(true);
+    let offset = 130;
 
-    let mut slider = Slider::new(Vec2::newi(600, 70), Vec2::newi(600, 530), 5., Color::RED, Color::BLUE, Color::GREEN, 0., 40., Color::GRAY, Color::DARKGRAY, 5.);
-    let mut bar = Bar::new(Vec2::newi(600, 77), Vec2::newi(600, 300), 5., Color::PURPLE, Color::YELLOW, Color::BROWN, 0.5);
-    let text_field = Textfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 530), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "hallo".to_string(), None, 80, Color::DARKBROWN, 0.);
-    let mut button = Button::new(Vec2::newi(200, 90), Vec2::newi(1450, 760), 10., 0.7, Color::BLUE, Color::MAROON, Some("click".to_string()), None, Some(80), Some(Color::PINK), Some(0.), None, true, Some(scale_function_add));
-    let mut switch = Switch::new(Vec2::newi(140, 70), Vec2::newi(670, 760), 5., Color::BROWN, Color::MAROON, Color::BEIGE, false, 40., Color::VIOLET, Color::SKYBLUE, 5.);
-    let mut tick_box = TickBox::new(70., Vec2::newi(440, 760), 10., 0.5, Color::BLANK, Color::MAGENTA, Color::GREEN, false);
-    let mut entrance_text_field = EntranceTextfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 300), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "".to_string(), None, 80, Color::DARKBROWN, 0., true, true, "_".to_string());
+    let mut slider = Slider::new(Vec2::newi(600, 70), Vec2::newi(600, 530 + offset), 5., Color::RED, Color::BLUE, Color::GREEN, 0., 40., Color::GRAY, Color::DARKGRAY, 5.);
+    let mut bar = Bar::new(Vec2::newi(600, 77), Vec2::newi(600, 300 + offset), 5., Color::PURPLE, Color::YELLOW, Color::BROWN, 0.5);
+    let text_field = Textfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 530 + offset), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "hallo".to_string(), None, 80, Color::DARKBROWN, 0.);
+    let mut button = Button::new(Vec2::newi(200, 90), Vec2::newi(1450, 760 + offset), 10., 0.7, Color::BLUE, Color::MAROON, Some("click".to_string()), None, Some(80), Some(Color::PINK), Some(0.), None, true, Some(scale_function_add));
+    let mut switch = Switch::new(Vec2::newi(140, 70), Vec2::newi(670, 760 + offset), 5., Color::BROWN, Color::MAROON, Color::BEIGE, false, 40., Color::VIOLET, Color::SKYBLUE, 5.);
+    let mut tick_box = TickBox::new(70., Vec2::newi(440, 760 + offset), 10., 0.5, Color::BLANK, Color::MAGENTA, Color::GREEN, false);
+    let mut entrance_text_field = EntranceTextfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 300 + offset), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "".to_string(), None, 80, Color::DARKBROWN, 0., true, true, "_".to_string());
     
     let mut menu = Menu::SartScreen;
     let mut start_button = Button::new(Vec2::new(300., 70.), Vec2::new(1920. / 2., 600.), 7., 0.7, Color::DARKGRAY, Color::BLACK, Some("Start".to_string()), None, Some(70), Some(Color::BLACK), Some(0.), None, true, Some(scale_function_add));
@@ -2031,7 +2028,8 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
     
     let mut left = false;
 
-
+    let mut first_frame = false;
+    let mut mouse_pos = Vec2::new(0., 0.);
 
     let mut lautstärke     = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 350.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.7, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.); 
     let mut fov            = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 450.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.7634, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.);  
@@ -2081,10 +2079,21 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
                     cam3d.set_as_current_cam();
                 
                     if key::just_pressed("p") {
+                        mouse::set_visivle(true);
+                        mouse::set_grab(false);
+                    
                         menu = Menu::InGameSettings;
+                        mouse_pos = mouse::get_position();
                     }
-        
-                    player.update(&mut cam3d, delta, &böden);
+                    
+                    if !first_frame {
+                        player.update(&mut cam3d, delta, &böden);
+                    }
+                    else {
+                        mouse::get_delta_position();
+                        first_frame = false;
+                    }
+                    
             
                     let mut front = cam3d.get_front();
                     front.normalize();
@@ -2103,6 +2112,7 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
                     mouse::set_visivle(true);
                     mouse::set_grab(false);
                     
+                    cam3d.position = player.position + Vec3::new(0., player.size.y / 2., 0.);
                     cam3d.rotation.x += 0.1 * delta;
                     cam3d.update_all_rotation();
 
@@ -2194,7 +2204,7 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
                     mouse::set_visivle(true);
                     mouse::set_grab(false);
                     
-                    cam3d.update_all_rotation();
+                    cam3d.set_as_current_cam();
 
 
                     
@@ -2239,6 +2249,8 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
                     back_button.draw(10);
 
                     if back_button.just_clicked() {
+                        first_frame = true; 
+                        mouse::set_position(mouse_pos);
                         menu = Menu::InGame;
                     }
                 }
