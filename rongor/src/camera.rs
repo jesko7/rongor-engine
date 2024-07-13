@@ -19,7 +19,7 @@ impl Camera2d {
 
 
 
-    fn to_macro_cam(&self) -> prelude::Camera2D {
+    pub fn to_macro_cam(&self) -> prelude::Camera2D {
 
         let mut cam = prelude::Camera2D::from_display_rect(Rect::new(0., prelude::screen_height(), screen_width(), -screen_height()));
 
@@ -63,7 +63,7 @@ impl Camera3d {
         }
     }
 
-    fn to_macro_cam(&self) -> prelude::Camera3D {
+    pub fn to_macro_cam(&self) -> prelude::Camera3D {
         prelude::Camera3D {
             position: self.position.to_macro_vec3(),
             target: self.target.to_macro_vec3(),

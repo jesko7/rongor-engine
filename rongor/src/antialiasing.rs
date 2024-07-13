@@ -3,7 +3,7 @@ use core::panic;
 use crate::image::Image;
 use image::{DynamicImage, Rgba};
 
-fn gaussian_blur(image: &DynamicImage, sigma: f32) -> DynamicImage {
+pub fn gaussian_blur(image: &DynamicImage, sigma: f32) -> DynamicImage {
     let rgba_image: image::ImageBuffer<Rgba<u8>, _> = image.to_rgba8();
 
 

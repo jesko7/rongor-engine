@@ -1,7 +1,6 @@
 pub mod mouse {
     use macroquad::prelude;
     use crate::vec::*;
-    use crossterm::cursor::*;
 
     pub const LEFT: u8 = 1;
     pub const RIGHT: u8 = 2;
@@ -20,9 +19,7 @@ pub mod mouse {
         let macro_delta = prelude::mouse_delta_position();
         Vec2::new(macro_delta.x, macro_delta.y)
     }
-    pub fn set_position(pos: Vec2) {
-        MoveTo(pos.x as u16, pos.y as u16);
-    }
+
     pub fn get_position() -> Vec2 {
         let macro_pos = prelude::mouse_position();
         Vec2::new(macro_pos.0, macro_pos.1)

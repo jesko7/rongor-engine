@@ -105,7 +105,7 @@ impl <'a>GlslShader<'a> {
         }
     }
 
-    fn get_material(&self) -> prelude::Material {
+    pub fn get_material(&self) -> prelude::Material {
         let shader = ShaderSource::Glsl { 
             vertex: self.vertex_shader, 
             fragment: self.fragment_shader 

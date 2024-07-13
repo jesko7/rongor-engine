@@ -1,7 +1,5 @@
 use crate::vec::*;
 
-
-#[derive(Debug, PartialEq)]
 pub enum Direction {
     Top,
     Bottom,
@@ -87,29 +85,25 @@ impl CubeHitbox {
         let (min, max) = self.get_min_max();
         let (other_min, other_max) = ohter.get_min_max();
         if max.0 < other_min.0 || min.0 > other_max.0 {
-            println!("asd");
             return false;
         }
         if max.1 < other_min.1 || min.1 > other_max.1 {
-            
             return false;
         }
         if max.2 < other_min.2 || min.2 > other_max.2 {
-            println!("{}, {}", min.2, other_max.2);
-            println!("asdf");
             return false;
         }
         true
     }
 
-    pub fn get_collision_quad(&self, direction: Direction) -> QuadHitbox {
+    pub fn get_collision_quads(&self, direction: Direction) -> QuadHitbox {
         match direction {
-            Direction::Top => QuadHitbox::new(self.position + Vec3::new(0., self.size.y / 2., 0.), Vec2::new(self.size.x - 0.0001, self.size.z - 0.0001), QuadHitboxAxis::Y),
-            Direction::Bottom => QuadHitbox::new(self.position - Vec3::new(0., self.size.y / 2., 0.), Vec2::new(self.size.x - 0.0001, self.size.z - 0.0001), QuadHitboxAxis::Y),
-            Direction::Right => QuadHitbox::new(self.position + Vec3::new(self.size.x / 2., 0., 0.), Vec2::new(self.size.z - 0.0001, self.size.y - 0.0001), QuadHitboxAxis::Z),
-            Direction::Left =>  QuadHitbox::new(self.position - Vec3::new(self.size.x / 2., 0., 0.), Vec2::new(self.size.z - 0.0001, self.size.y - 0.0001), QuadHitboxAxis::Z),
-            Direction::Back => QuadHitbox::new(self.position + Vec3::new(0., 0., self.size.z / 2.), Vec2::new(self.size.x - 0.0001, self.size.y - 0.0001), QuadHitboxAxis::X),
-            Direction::Front => QuadHitbox::new(self.position + Vec3::new(0., 0., self.size.z / 2.), Vec2::new(self.size.x - 0.0001, self.size.y - 0.0001), QuadHitboxAxis::X),
+            Direction::Top => QuadHitbox::new(self.position + Vec3::new(0., self.size.y / 2., 0.), Vec2::new(self.size.x, self.size.z), QuadHitboxAxis::Y),
+            Direction::Bottom => QuadHitbox::new(self.position - Vec3::new(0., self.size.y / 2., 0.), Vec2::new(self.size.x, self.size.z), QuadHitboxAxis::Y),
+            Direction::Right => QuadHitbox::new(self.position + Vec3::new(self.size.x / 2., 0., 0.), Vec2::new(self.size.z, self.size.y), QuadHitboxAxis::Z),
+            Direction::Left =>  QuadHitbox::new(self.position - Vec3::new(self.size.x / 2., 0., 0.), Vec2::new(self.size.z, self.size.y), QuadHitboxAxis::Z),
+            Direction::Back => QuadHitbox::new(self.position + Vec3::new(0., 0., self.size.z / 2.), Vec2::new(self.size.x, self.size.y), QuadHitboxAxis::X),
+            Direction::Front => QuadHitbox::new(self.position + Vec3::new(0., 0., self.size.z / 2.), Vec2::new(self.size.x, self.size.y), QuadHitboxAxis::X),
         }
     }
 
@@ -130,7 +124,7 @@ impl CubeHitbox {
     }
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug)]
 pub enum QuadHitboxAxis {
     X,
     Y,
@@ -155,15 +149,10 @@ impl QuadHitbox {
 
     pub fn collision_cube(&self, ohter: CubeHitbox) -> bool {
         let size = match self.axis {
-            QuadHitboxAxis::X => Vec3::new(0.001, self.size.x, self.size.y),
-            QuadHitboxAxis::Y => Vec3::new(self.size.x, 0.001, self.size.y),
-            QuadHitboxAxis::Z => Vec3::new(self.size.x, self.size.y, 0.001)
+            QuadHitboxAxis::X => Vec3::new(0., self.size.x, self.size.y),
+            QuadHitboxAxis::Y => Vec3::new(self.size.x, 0., self.size.y),
+            QuadHitboxAxis::Z => Vec3::new(self.size.x, self.size.y, 0.)
         };
-
-        if self.axis == QuadHitboxAxis::Z {
-            println!("asd")
-        }
-
         CubeHitbox::new(self.position, size).collision_cube(ohter)
     }
 }

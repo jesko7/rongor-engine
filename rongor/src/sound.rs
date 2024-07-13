@@ -19,7 +19,7 @@ impl Sound {
         Sound { inner_sound: audio.unwrap(), looped, volume}
     }
 
-    fn get_sound_params(&self) -> macroquad::audio::PlaySoundParams {
+    pub fn get_sound_params(&self) -> macroquad::audio::PlaySoundParams {
         macroquad::audio::PlaySoundParams {
             looped: self.looped,
             volume: self.volume

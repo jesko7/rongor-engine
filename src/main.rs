@@ -1,4 +1,4 @@
-use std::{f32::consts::PI, ffi::FromVecWithNulError, iter::zip};
+use std::f32::consts::PI;
 
 use ndarray::AssignElem;
 use rand::Rng;
@@ -115,10 +115,10 @@ async fn page1(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut
 
         if num_of_presses_on_page >= 4 {
             if num_of_presses_on_page == 4 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("4: Beispiel Spiel mit der Game Engine", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("4: Beispiel Spiele mit der Game Engine", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             else {
-                draw2d::text::draw_text_center("4: Beispiel Spiel mit der Game Engine", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
+                draw2d::text::draw_text_center("4: Beispiel Spiele mit der Game Engine", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
             } 
         }
     };
@@ -569,7 +569,7 @@ async fn page6(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut
                 textures[3].rotation = T;
             }
         }
-
+        println!("{}", num_of_presses_on_page);
         {
             if num_of_presses_on_page == 7 {
                 if num_of_presses_on_page == 7 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
@@ -580,7 +580,9 @@ async fn page6(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut
                 }
             }
                 // + (T * 10. + 0.9347).sin()  + (T * 10. + 0.9347).cos() Vec2::new(1200. + (T * 10. + 0.9347).cos() * 60., 500. + (T * 10. + 0.9347).sin() * 60.)
+            println!("{}", num_of_presses_on_page);
             if num_of_presses_on_page == 8 {
+                println!("sdfsd");
                 draw2d::text::draw_text_center("Drehtürmodell", Vec2::new(1200. + (T * 10. + 0.9347).cos() * 60., 500. + (T * 10. + 0.9347).sin() * 60.), 70, Color::BLACK, 0., Some(fonts[0].clone()));
             }
             if num_of_presses_on_page == 9 {
@@ -1433,59 +1435,6 @@ async fn page11(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mu
    };
 }
 
-async fn page13(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut Vec<Image>, cam3d: &mut Camera3d, objects: &mut Vec<Mesh>) {
-    unsafe { 
-        draw_background(window, rngs).await;
-        draw2d::text::draw_text_center("Elemente der Game Engine", Vec2::new(1920. / 2., 220. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
-        let width = draw2d::text::measure_text("Elemente der Game Engine", 110, Some(fonts[1].clone())).x;
-        draw2d::line::line(Vec2::new(1920. / 2. - width / 2., 285. + TRANSITION_TIME * 111.), Vec2::new(1920. / 2. + width / 2., 285. + TRANSITION_TIME * 111.), 5., Color::BLACK);
-
-        
-        if num_of_presses_on_page >= 1 {
-            if num_of_presses_on_page == 1 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("-mathe funktionen", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            }
-            else {
-                draw2d::text::draw_text_center("-mathe funktionen", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            } 
-        }
-
-        if num_of_presses_on_page >= 2 {
-            if num_of_presses_on_page == 2 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("-shaders", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            }
-            else {
-                draw2d::text::draw_text_center("-shaders", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 110.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            } 
-        }
-
-        if num_of_presses_on_page >= 3 {
-            if num_of_presses_on_page == 3 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("-Antialiasing", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111.  + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            }
-            else {
-                draw2d::text::draw_text_center("-Antialiasing", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 220.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            } 
-        }
-
-        if num_of_presses_on_page >= 4 {
-            if num_of_presses_on_page == 4 && TRANSITION_TIME2 != TRANSITION2_MAX_TIME {
-                draw2d::text::draw_text_center("-Vektoren", Vec2::new(1920. / 2. - TRANSITION_TIME2 * 60., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            }
-            else {
-                draw2d::text::draw_text_center("-Vektoren", Vec2::new(1920. / 2., 410. + TRANSITION_TIME * 111. + 330.), 90, Color::BLACK, 0., Some(fonts[0].clone()));
-            } 
-        }
-    };
-}
-
-async fn page14(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>, textures: &mut Vec<Image>, cam3d: &mut Camera3d, objects: &mut Vec<Mesh>) {
-    unsafe { 
-        draw_background(window, rngs).await;
-        draw2d::text::draw_text_center("Gibt es noch", Vec2::new(1920. / 2., 1080. /2. - 55. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
-        draw2d::text::draw_text_center("Fragen?", Vec2::new(1920. / 2., 1080. /2. + 55. + TRANSITION_TIME * 111.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
-    };
-}
 
 
 async fn run(window: Window) {
@@ -1503,11 +1452,11 @@ async fn run(window: Window) {
     
     let font = Font::load_new_font("assets/MADEAwelierPERSONALUSE-Regular.otf").await;
     let font2 = Font::load_new_font("assets/MADEAwelierPERSONALUSE-Bold.otf").await;
-    
+
     let font3 = Font::load_new_font("assets/coffee_normal/Coffee Normal.ttf").await;
     let font4 = Font::load_new_font("assets/creative_vibes/Creative Vibes TTF.ttf").await;
     let font5 = Font::load_new_font("assets/kolak/KOLAK.ttf").await;
-    let font6: Font = Font::load_new_font("assets/super_creamy/Super Creamy Personal Use.ttf").await;
+    let font6 = Font::load_new_font("assets/super_creamy/Super Creamy Personal Use.ttf").await;
     fonts.push(font);
     fonts.push(font2);
     fonts.push(font3);
@@ -1601,7 +1550,7 @@ async fn run(window: Window) {
         }
 
         unsafe {
-            println!("{}", num_of_presses_on_page);
+            println!("{}", TRANSITION_TIME2);
         }
         
 
@@ -1618,10 +1567,8 @@ async fn run(window: Window) {
             9 => page9(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
             10 => page10(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
             11 => page11(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
-            12 => minecraft_run(&window, rngs.clone(), fonts.clone()).await,
-            13 => page13(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
-            14 => page14(&window, rngs.clone(), fonts.clone(), &mut textures, &mut cam3d, &mut objects).await, 
-            15 => end(&window, rngs.clone(), fonts.clone()).await,
+            12 => minecraft_run(&window, rngs.clone()).await,
+            13 => end(&window, rngs.clone(), fonts.clone()).await,
             _other => break
         };
         
@@ -1629,12 +1576,10 @@ async fn run(window: Window) {
 
 
         if page == 12 {
-            //in_transition = true;
+            in_transition = true;
             page += 1;
             unsafe {    
-                TRANSITION_TIME = 0.;
-                num_of_presses_on_page = 0;
-                next_page_transition = true;
+                TRANSITION_TIME = -TRANSITION_MAX_TIME;
             }
             
         }
@@ -1649,10 +1594,10 @@ use std::collections::HashMap;
 static MOVEMENT_SPEED: f32 = 4.5;
 static MOVEMENT_INCREASE: f32 = 1.1;
 static MOVEMENT_STRAFE: f32 = 0.3;
-static mut LOOK_SPEED: f32 = 0.8;
-static JUMP_HEIGHT: f32 = 6.;
-static mut GRAVITY: f32 = 10.;
-static mut RENDER_DISTANCE: f32 = 4.;
+static LOOK_SPEED: f32 = 0.8;
+static JUMP_HEIGHT: f32 = 4.;
+static GRAVITY: f32 = 10.;
+static RENDER_DISTANCE: f32 = 4.;
 
 
 async fn init() -> (Vec<Image>, Camera2d, Camera3d, Player, Vec<Boden>) {
@@ -1677,7 +1622,7 @@ async fn init() -> (Vec<Image>, Camera2d, Camera3d, Player, Vec<Boden>) {
     };
 
 
-    let bigness = 50;
+    let bigness = 100;
 
     let mut xz_ys: HashMap<(i32, i32), f32> = HashMap::new();
 
@@ -1742,12 +1687,9 @@ impl Boden {
         let distancex = (cam3d.position.x - self.position.x).abs();
         let distancez = (cam3d.position.z - self.position.z).abs();
 
-        unsafe {
-            if distancex + distancez > RENDER_DISTANCE * 16. {
-                return;
-            }
+        if distancex + distancez > RENDER_DISTANCE * 16. {
+            return;
         }
-        
         
         let mut dir_to_self: Vec3 = cam3d.position - self.position;
         dir_to_self.normalize();
@@ -1767,10 +1709,6 @@ impl Boden {
     fn get_hitbox(&self) -> CubeHitbox {
         CubeHitbox::new(self.position, self.size)
     }
-
-    fn get_top_hitbox(&self) -> QuadHitbox {
-        QuadHitbox::new(self.position + Vec3::new(0., self.size.y / 2., 0.), Vec2::new(self.size.x - 0.001, self.size.z - 0.001), QuadHitboxAxis::Y)
-    }
 }
 
 struct Player {
@@ -1784,13 +1722,13 @@ impl Player {
     fn update(&mut self, cam3d: &mut Camera3d, delta: f32, böden: &Vec<Boden>) {        
         self.look(cam3d);
         let touching = self.gravity(delta, böden);
-        self.movement(delta, cam3d, touching, böden);
+        self.movement(delta, cam3d, touching);
 
-        cam3d.position = self.position + Vec3::new(0., self.size.y / 2., 0.);
+        cam3d.position = self.position;
         cam3d.update_all_rotation();
     }
 
-    fn movement(&mut self, delta: f32, cam3d: &Camera3d, touching: bool, böden: &Vec<Boden>) {
+    fn movement(&mut self, delta: f32, cam3d: &Camera3d, touching: bool) {
         let mut offset = Vec3::new(0., 0., 0.);
         if key::is_pressed("w") {
             let mut front = cam3d.get_front();
@@ -1834,75 +1772,6 @@ impl Player {
         }
 
         self.position = self.position + offset;
-        
-        for boden in böden {
-            let distancex = (boden.position.x - self.position.x).abs();
-            let distancey = (boden.position.y - self.position.y).abs();
-            let distancez = (boden.position.z - self.position.z).abs();
-            if distancex + distancey + distancez > 5. {
-                continue;
-            }
-            if boden.get_hitbox().collision_cube(self.get_hitbox()) 
-            {
-                let mut touching_walls = false;
-                let mut wallytouching = vec![];
-                let mut dirs = vec![];
-                let mut walls = vec![];
-                
-                let mut top = boden.get_top_hitbox();
-                
-                top.position = top.position + Vec3::new(0., 0.1, 0.);
-                top.size = top.size - Vec2::new(self.size.x, self.size.z);
-
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Back));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Front));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Right));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Left));
-
-                for (x, wall) in walls.iter_mut().enumerate() {
-                    wall.size = Vec2::new(1. - self.size.x / 2., 0.9);
-                    wall.position = wall.position - Vec3::new(0., 0.5, 0.);
-
-                    if wall.collision_cube(self.get_hitbox()) {
-                        
-
-                        touching_walls = true;
-                        wallytouching.push(wall);
-                        dirs.push(x)
-                        //}
-                    }
-                }
-                
-
-                
-
-                for (wall, dir) in zip(wallytouching, dirs){
-                    let direction = match dir {
-                        0 => Direction::Back,
-                        1 => Direction::Front,
-                        2 => Direction::Right,
-                        3 => Direction::Left,    
-                        other => panic!()
-                    };
-
-
-                    if direction == Direction::Right {
-                        self.position = Vec3::new(wall.position.x + self.size.x / 2., self.position.y, self.position.z);
-                    }
-                    if direction == Direction::Left {
-                        self.position = Vec3::new(wall.position.x - self.size.x / 2., self.position.y, self.position.z);
-                    }
-                    if direction == Direction::Front {
-                        self.position = Vec3::new(self.position.x, self.position.y, wall.position.z + self.size.z / 2.);
-                    }
-                    if direction == Direction::Back {
-                        self.position = Vec3::new(self.position.x, self.position.y, wall.position.z - self.size.z / 2.);
-                    }
-                }
-                
-            }
-        }
-        
     }
 
     fn gravity(&mut self, delta: f32, böden: &Vec<Boden>) -> bool{
@@ -1917,40 +1786,10 @@ impl Player {
             if distancex + distancey + distancez > 5. {
                 continue;
             }
-            if boden.get_top_hitbox().collision_cube(self.get_hitbox()) 
-            {
-                /* 
-                let mut touching_walls = false;
-                let mut walls = vec![];
-                
-                let mut top = boden.get_top_hitbox();
-
-                top.size = top.size - Vec2::new(self.size.x, self.size.y);
-
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Back));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Front));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Right));
-                walls.push(boden.get_hitbox().get_collision_quad(Direction::Left));
-                
-                for wall in walls.iter_mut() {
-                    wall.size = wall.size - Vec2::new(0., self.velocity - delta - 0.1);
-                    if wall.collision_cube(self.get_hitbox()) {
-                        
-                        if top.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) > wall.position.dist(&(self.position - Vec3::new(0., self.size.y, 0.))) {
-                            touching_walls = true;
-                            break;
-                        }
-                    }
-                }
-                */
-
-                
-                
-                
+            if self.get_hitbox().collision_cube(boden.get_hitbox()) {
                 touching = true;
                 böden_touching.push(boden);
                 break;
-                
             }
         }
         if touching {
@@ -1963,19 +1802,13 @@ impl Player {
         }
         if !touching {
             self.position.y -= self.velocity * delta;
-
-            unsafe {
-                self.velocity += GRAVITY * delta;
-            }
+            self.velocity += GRAVITY * delta;
         }
         touching
     }
 
     fn look(&self, cam3d: &mut Camera3d) {
-        unsafe {
-            cam3d.rotation = cam3d.rotation + mouse::get_delta_position().scale(LOOK_SPEED);
-        }
-        
+        cam3d.rotation = cam3d.rotation + mouse::get_delta_position().scale(LOOK_SPEED);
         if cam3d.rotation.y < -PI / 2. + 0.001  {
             cam3d.rotation.y = -PI / 2. + 0.001;
         }
@@ -1992,17 +1825,8 @@ impl Player {
 }
 
 
-#[derive(Debug, PartialEq)]
-enum Menu {
-    SartScreen,
-    InGame,
-    Settings,
-    InGameSettings
-}
 
-
-
-async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){   
+async fn minecraft_run(window: &Window, rngs: Vec<f32>){   
     let (
         textures, 
         default_cam, 
@@ -2012,42 +1836,22 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
     ) = init().await;
     
     mouse::set_visivle(true);
-    let offset = 130;
 
-    let mut slider = Slider::new(Vec2::newi(600, 70), Vec2::newi(600, 530 + offset), 5., Color::RED, Color::BLUE, Color::GREEN, 0., 40., Color::GRAY, Color::DARKGRAY, 5.);
-    let mut bar = Bar::new(Vec2::newi(600, 77), Vec2::newi(600, 300 + offset), 5., Color::PURPLE, Color::YELLOW, Color::BROWN, 0.5);
-    let text_field = Textfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 530 + offset), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "hallo".to_string(), None, 80, Color::DARKBROWN, 0.);
-    let mut button = Button::new(Vec2::newi(200, 90), Vec2::newi(1450, 760 + offset), 10., 0.7, Color::BLUE, Color::MAROON, Some("click".to_string()), None, Some(80), Some(Color::PINK), Some(0.), None, true, Some(scale_function_add));
-    let mut switch = Switch::new(Vec2::newi(140, 70), Vec2::newi(670, 760 + offset), 5., Color::BROWN, Color::MAROON, Color::BEIGE, false, 40., Color::VIOLET, Color::SKYBLUE, 5.);
-    let mut tick_box = TickBox::new(70., Vec2::newi(440, 760 + offset), 10., 0.5, Color::BLANK, Color::MAGENTA, Color::GREEN, false);
-    let mut entrance_text_field = EntranceTextfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 300 + offset), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "".to_string(), None, 80, Color::DARKBROWN, 0., true, true, "_".to_string());
+    let mut slider = Slider::new(Vec2::newi(600, 70), Vec2::newi(600, 530), 5., Color::RED, Color::BLUE, Color::GREEN, 0., 40., Color::GRAY, Color::DARKGRAY, 5.);
+    let mut bar = Bar::new(Vec2::newi(600, 77), Vec2::newi(600, 300), 5., Color::PURPLE, Color::YELLOW, Color::BROWN, 0.5);
+    let text_field = Textfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 530), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "hallo".to_string(), None, 80, Color::DARKBROWN, 0.);
+    let mut button = Button::new(Vec2::newi(200, 90), Vec2::newi(1450, 760), 10., 0.7, Color::BLUE, Color::MAROON, Some("click".to_string()), None, Some(80), Some(Color::PINK), Some(0.), None, true, Some(scale_function_add));
+    let mut switch = Switch::new(Vec2::newi(140, 70), Vec2::newi(670, 760), 5., Color::BROWN, Color::MAROON, Color::BEIGE, false, 40., Color::VIOLET, Color::SKYBLUE, 5.);
+    let mut tick_box = TickBox::new(70., Vec2::newi(440, 760), 10., 0.5, Color::BLANK, Color::MAGENTA, Color::GREEN, false);
+    let mut entrance_text_field = EntranceTextfield::new(Vec2::newi(200, 120), Vec2::newi(1450, 300), 10., 0.3, Color::DARKPURPLE, Color::MAGENTA, "".to_string(), None, 80, Color::DARKBROWN, 0., true, true, "_".to_string());
     
-    let mut menu = Menu::SartScreen;
-    let mut start_button = Button::new(Vec2::new(300., 70.), Vec2::new(1920. / 2., 600.), 7., 0.7, Color::DARKGRAY, Color::BLACK, Some("Start".to_string()), None, Some(70), Some(Color::BLACK), Some(0.), None, true, Some(scale_function_add));
-    let mut einstellungs_button = Button::new(Vec2::new(350., 73.), Vec2::new(1920. / 2., 750.), 7., 0.7, Color::DARKGRAY, Color::BLACK, Some("Einstellung".to_string()), None, Some(65), Some(Color::BLACK), Some(0.), None, true, Some(scale_function_add));
-    
+
     let mut left = false;
 
-    let mut first_frame = false;
-    let mut mouse_pos = Vec2::new(0., 0.);
-
-    let mut lautstärke     = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 350.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.7, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.); 
-    let mut fov            = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 450.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.7634, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.);  
-    let mut sensitivität   = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 550.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.7235, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.);  
-    let mut gravitation    = Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 650.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.5723, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.);  
-    let mut render_distance= Slider::new(Vec2::new(350., 50.), Vec2::new(1920. / 2. + 210., 750.), 3., Color::new(90, 90, 90, 255), Color::new(105, 105, 105, 255), Color::BLACK, 0.5723, 30., Color::new(50, 50, 50, 255), Color::BLACK, 3.);  
-
-
-    let settings_background = RoundedField::new(Vec2::new(1000., 800.), Vec2::new(1920. / 2., 450.), 10., 0.8, Color::new(70, 70, 70, 255), Color::BLACK);
-
-    let mut back_button = Button::new(Vec2::new(300., 70.), Vec2::new(1920. / 2., 920.), 7., 0.7, Color::DARKGRAY, Color::BLACK, Some("Zurück".to_string()), None, Some(80), Some(Color::BLACK), Some(0.), None, true, Some(scale_function_add));
-    
 
     while window.update_screen().await {
         let delta = window.get_delta_time();
-        unsafe {
-         T += 0.5 * delta
-        }
+        
        
 
         unsafe {
@@ -2069,198 +1873,31 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
 
 
 
-        
+
                 mouse::set_visivle(false);
                 mouse::set_grab(true);
                 default_cam.set_as_current_cam();
                 draw2d::clear(Color::new(0, 0, 0, 255));
-
-                if menu == Menu::InGame {
-                    cam3d.set_as_current_cam();
+                cam3d.set_as_current_cam();
                 
-                    if key::just_pressed("p") {
-                        mouse::set_visivle(true);
-                        mouse::set_grab(false);
-                    
-                        menu = Menu::InGameSettings;
-                        mouse_pos = mouse::get_position();
-                    }
-                    
-                    if !first_frame {
-                        player.update(&mut cam3d, delta, &böden);
-                    }
-                    else {
-                        mouse::get_delta_position();
-                        first_frame = false;
-                    }
-                    
-            
-                    let mut front = cam3d.get_front();
-                    front.normalize();
-            
+        
+        
+                player.update(&mut cam3d, delta, &böden);
+        
+                let mut front = cam3d.get_front();
+                front.normalize();
+        
 
-                    for boden in &böden {
-                        boden.update(&mut cam3d, front);
-                    }
-            
-                    draw3d::sphere::sphere_center(Vec3::new(0., 0., 0.), 1000., None, Color::new(0, 168, 243, 255));
-            
+                for boden in &böden {
+                    boden.update(&mut cam3d, front);
                 }
-
-                
-                else if menu == Menu::SartScreen {
-                    mouse::set_visivle(true);
-                    mouse::set_grab(false);
-                    
-                    cam3d.position = player.position + Vec3::new(0., player.size.y / 2., 0.);
-                    cam3d.rotation.x += 0.1 * delta;
-                    cam3d.update_all_rotation();
-
-
-                    
-            
-                    let mut front = cam3d.get_front();
-                    front.normalize();
-            
-
-                    for boden in &böden {
-                        boden.update(&mut cam3d, front);
-                    }
-            
-                    draw3d::sphere::sphere_center(Vec3::new(0., 0., 0.), 1000., None, Color::new(0, 168, 243, 255));
-                
-                
-                    default_cam.set_as_current_cam();
-                    draw2d::text::draw_text_center("Willkommen zum ersten spiel", Vec2::new(1920. / 2., 200.), 120,Color::BLACK, 0.,None);
-                    
-                    start_button.draw(100);
-                    einstellungs_button.draw(100);
-
-                    if einstellungs_button.just_clicked() {
-                        menu = Menu::Settings;
-                    }
-                    
-                    
-                    if start_button.just_clicked() {
-                        menu = Menu::InGame;
-                    }
-                }
-                
-                else if menu == Menu::Settings {
-                    mouse::set_visivle(true);
-                    mouse::set_grab(false);
-                    
-                    cam3d.rotation.x += 0.1 * delta;
-                    cam3d.update_all_rotation();
-
-
-                    
-            
-                    let mut front = cam3d.get_front();
-                    front.normalize();
-            
-
-                    for boden in &böden {
-                        boden.update(&mut cam3d, front);
-                    }
-            
-                    draw3d::sphere::sphere_center(Vec3::new(0., 0., 0.), 1000., None, Color::new(0, 168, 243, 255));
-                
-                
-                    default_cam.set_as_current_cam();
-
-                    settings_background.draw(100, true);
-
-                    lautstärke.draw(10);
-                    fov.draw(10);
-                    sensitivität.draw(10);
-                    gravitation.draw(10);
-                    render_distance.draw(10);
-
-                    draw2d::text::draw_text_center("Lautstärke:",       Vec2::new(1920. / 2. - 195., 350.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("FOV:",              Vec2::new(1920. / 2. - 195., 450.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Sensitivität:",     Vec2::new(1920. / 2. - 195., 550.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Gravitation:",      Vec2::new(1920. / 2. - 195., 650.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Sichtreichwite:",   Vec2::new(1920. / 2. - 195., 750.), 70, Color::BLACK, 0., None);
-                
-                    unsafe {
-                        GRAVITY = 10. * gravitation.get_value();
-                        LOOK_SPEED =  0.8 * sensitivität.get_value();
-                        cam3d.fovy =  1.4 * fov.get_value();
-                        RENDER_DISTANCE = 4. * render_distance.get_value();
-                    }
-
-
-                    draw2d::text::draw_text_center("Einstellung", Vec2::new(1920. / 2., 150.), 120, Color::BLACK, 0., None);
-
-                    back_button.draw(10);
-
-                    if back_button.just_clicked() {
-                        menu = Menu::SartScreen;
-                    }
-                }
-
-                else if menu == Menu::InGameSettings {
-                    mouse::set_visivle(true);
-                    mouse::set_grab(false);
-                    
-                    cam3d.set_as_current_cam();
-
-
-                    
-            
-                    let mut front = cam3d.get_front();
-                    front.normalize();
-            
-
-                    for boden in &böden {
-                        boden.update(&mut cam3d, front);
-                    }
-            
-                    draw3d::sphere::sphere_center(Vec3::new(0., 0., 0.), 1000., None, Color::new(0, 168, 243, 255));
-                
-                
-                    default_cam.set_as_current_cam();
-
-                    settings_background.draw(100, true);
-
-                    lautstärke.draw(10);
-                    fov.draw(10);
-                    sensitivität.draw(10);
-                    gravitation.draw(10);
-                    render_distance.draw(10);
-
-                    draw2d::text::draw_text_center("Lautstärke:",       Vec2::new(1920. / 2. - 195., 350.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("FOV:",              Vec2::new(1920. / 2. - 195., 450.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Sensitivität:",     Vec2::new(1920. / 2. - 195., 550.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Gravitation:",      Vec2::new(1920. / 2. - 195., 650.), 70, Color::BLACK, 0., None);
-                    draw2d::text::draw_text_center("Sichtreichwite:",   Vec2::new(1920. / 2. - 195., 750.), 70, Color::BLACK, 0., None);
-                
-                    unsafe {
-                        GRAVITY = 10. * gravitation.get_value();
-                        LOOK_SPEED =  0.8 * sensitivität.get_value();
-                        cam3d.fovy =  1.4 * fov.get_value();
-                        RENDER_DISTANCE = 4. * render_distance.get_value();
-                    }
-
-
-                    draw2d::text::draw_text_center("Einstellung", Vec2::new(1920. / 2., 150.), 120, Color::BLACK, 0., None);
-
-                    back_button.draw(10);
-
-                    if back_button.just_clicked() {
-                        first_frame = true; 
-                        mouse::set_position(mouse_pos);
-                        menu = Menu::InGame;
-                    }
-                }
-
-
+        
+                draw3d::sphere::sphere_center(Vec3::new(0., 0., 0.), 1000., None, Color::new(0, 168, 243, 255));
+        
                 if key::is_pressed("right") {
                     break;
                 }
-                
-                
+
 
 
 
@@ -2302,15 +1939,11 @@ async fn minecraft_run(window: &Window, rngs: Vec<f32>, fonts: Vec<Font>){
 
                 if key::just_pressed("up") {
                     inMinecraft = true;
+                    mouse::set_visivle(false);
+                    mouse::set_grab(true);
                 }
                 
                 draw_background(window, rngs.clone()).await;
-
-
-                draw2d::text::draw_text_center("Elemente der Game Engine", Vec2::new(1920. / 2., 220.), 110, Color::BLACK, 0., Some(fonts[1].clone()));
-                let width = draw2d::text::measure_text("Elemente der Game Engine", 110, Some(fonts[1].clone())).x;
-                draw2d::line::line(Vec2::new(1920. / 2. - width / 2., 285.), Vec2::new(1920. / 2. + width / 2., 285.), 5., Color::BLACK);
-        
 
                 slider.draw(10);
                 bar.draw(50);
